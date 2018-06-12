@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-lazy-init="true" xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="date" class="java.time.LocalDate" factory-method="now"/>
+    <bean id="category" class="com.lingnan.entity.Category"/>
+    <bean id="book" class="com.lingnan.entity.Book">
+        <!--<constructor-arg ref="category"/>-->
+        <property name="id" value="5"/>
+        <property name="name" value="中国历史"/>
+        <property name="publishDate" ref="date"/>
+        <property name="category" ref="category"/>
+    </bean>
+
+
+</beans>
